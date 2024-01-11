@@ -1,0 +1,16 @@
+name: "workflow_dispatch"
+on: 
+  workflow_dispatch:
+  repository_dispatch:
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    name: "init"
+    steps:
+    - run: |
+        echo "github.event_name"
+        echo ${{ github.event_name }}
+
+        echo "github"
+        echo "${{toJson(github)}}"
